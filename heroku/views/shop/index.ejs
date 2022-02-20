@@ -1,0 +1,24 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <section class="content-title">
+            <h3>Welcome!</h3>
+        </section>
+        <section class="carousel-container">
+            <img class="carousel-item" src="/images/carousel1.jpg" alt="mountains image">
+            <img class="carousel-item" src="/images/carousel2.jpg" alt="mountains image">
+            <img class="carousel-item" src="/images/carousel3.jpg" alt="mountains image">
+            <img class="carousel-item" src="/images/carousel4.jpg" alt="mountains image">
+            <img class="carousel-item" src="/images/carousel5.jpg" alt="mountains image">
+        </section>
+    </main>
+    <script>
+        w3.slideshow('.carousel-item', 5000);
+    </script>
+<%- include('../includes/end.ejs') %>

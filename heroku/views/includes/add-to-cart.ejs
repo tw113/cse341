@@ -1,0 +1,24 @@
+<style>
+    .choose-size button {
+      border: none;
+      padding: 20px;
+      margin-top: 40px;
+      font-family: Arial;
+      font-weight: bold;
+      font-size: 18px;
+      color: white;
+      background-color: #816f61;
+    }
+
+    .choose-size button:hover {
+      cursor: pointer;
+      color: white;
+      background-color: gray;
+    }
+</style>
+
+<form action="/cart" method="post">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <button class="choose-size" type="submit">Add to Cart</button>
+    <input type="hidden" name="productId" value="<%= product._id %>">
+</form>

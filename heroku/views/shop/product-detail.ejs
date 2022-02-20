@@ -1,0 +1,42 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main>
+            <div class="product-view">
+                <div class="product-pictures">
+                    <div class="main-pic">
+                    <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+                    </div>
+                    <div class="thumb-pics">
+                    <!-- <img class="thumb-pic" src="hoodie.png" alt="Hoodie">
+                    <img class="thumb-pic" src="hoodie02.png" alt="Hoodie">
+                    <img class="thumb-pic" src="hoodie03.png" alt="Hoodie"> -->
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h4><%= product.title %></h4>
+                    <h5>$<%= product.price %><span class="plus-shipping"> + Shipping</span></h5>
+                    <p>
+                        <%= product.description %>
+                    </p>
+                    <form>
+                    <div class="choose-size">
+                        <p style="font-size: 13px; color: #816f61;">Choose Your Size</p>
+                        <select>
+                            <option value="default">Select an Option</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                        </select>
+                        <% if (isAuthenticated) { %>
+                            <%- include('../includes/add-to-cart.ejs', {product: product}) %>
+                        <% } %>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <%- include('../includes/end.ejs') %>

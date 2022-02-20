@@ -1,0 +1,43 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+        <main>
+            <section class="content-title">
+                <h3>Store</h3>
+            </section>
+            <div class="content-container">
+                <div class="side-nav">
+                <h5 class="filter">Filter</h5>
+                  <ul>
+                    <li><a>All</a></li>
+                    <li><a>Men</a></li>
+                    <li><a>Women</a></li>
+                    <li><a>Boys</a></li>
+                    <li><a>Girls</a></li>
+                    <li><a>Accessories</a></li>
+                    <li><a>Backpacks</a></li>
+                    <li><a>Adventure Gadgets</a></li>
+                  </ul>
+                </div>
+                <% if (prods.length > 0) { %>
+                    <div class="item-list">
+                        <% for (let product of prods) { %>
+                            <a href="/products/<%= product._id %>"><div class="item">
+                                <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+                                <div class="center-of-img">
+                                    <h4 class="product-name"><%= product.title %></h4>
+                                    <h5 class="price"><%= product.price %></h5>
+                                </div>
+                            </div></a>
+                        <% } %>
+                    </div>
+                <% } else { %>
+                    <h1>No Products Found!</h1>
+                <% } %>
+            </div>
+        </main>
+            <%- include('../includes/end.ejs') %>
